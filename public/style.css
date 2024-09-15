@@ -1,0 +1,287 @@
+/* Importando a fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #007bff, #6a11cb);
+    color: #f9fcff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #f8f9fa; /* Cor de fundo do cabeçalho */
+    padding: 10px 0; /* Padding no cabeçalho */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+header nav form {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+    align-items: center; /* Alinha os itens verticalmente */
+    margin: 0; /* Remove margem extra */
+}
+
+nav button,
+nav a {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #007bff; /* Borda dos botões */
+    border-radius: 5px;
+    background-color: #ffffff; /* Fundo branco */
+    color: #007bff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado dos links */
+    cursor: pointer; /* Cursor de ponteiro para botões */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para efeito hover */
+}
+
+nav button:hover,
+nav a:hover {
+    background-color: #007bff; /* Fundo azul claro no hover */
+    color: #ffffff; /* Texto branco no hover */
+}
+
+/* Destacar a frase "Your Recipes" */
+h2 {
+    color: #f5f5f5; /* Cor azul para destacar o título */
+    font-size: 2em; /* Aumentar o tamanho da fonte */
+    border-bottom: 2px solid #f0f2f5; /* Linha de destaque embaixo */
+    padding-bottom: 10px; /* Espaçamento embaixo da linha */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+/* Estilizar o botão "Add New Recipe" com uma classe */
+.btn-add-recipe {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745; /* Cor verde para destaque */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.btn-add-recipe:hover {
+    background-color: #218838; /* Cor verde escuro no hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.user-info img.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+/* Formulário de Busca */
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 120px);
+    margin-right: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Recipe Grid */
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+/* Recipe Card */
+.recipe {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+    transition: transform 0.3s;
+}
+
+.recipe:hover {
+    transform: scale(1.05);
+}
+
+.recipe h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.recipe p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.recipe a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.recipe a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Recipe Details */
+.recipe-details {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Recipe Details Header */
+.recipe-details h1 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Recipe Details Content */
+.recipe-details p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.recipe-details ul,
+.recipe-details ol {
+    padding-left: 20px;
+}
+
+.recipe-details .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.recipe-details .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .recipe-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .recipe-details p {
+        font-size: 0.875rem;
+    }
+
+    .recipe-details .btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .recipe-details ul,
+    .recipe-details ol {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-details h1 {
+        font-size: 1.25rem;
+    }
+
+    .recipe-details p {
+        font-size: 0.75rem;
+    }
+
+    .recipe-details .btn {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .recipe-details form {
+        display: block;
+        margin: 0;
+    }
+}
