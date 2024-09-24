@@ -1,17 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-    <!-- Exibe o nome e a foto do usuário no topo -->
+
+    <!-- Exibe o nome do usuário no topo -->
     <div class="user-info">
-        @php
-            // Verifique se a imagem do perfil existe
-            $profilePicturePath = auth()->user()->profile_picture;
-            $profilePictureUrl = $profilePicturePath ? asset('storage/' . $profilePicturePath) : asset('default-profile.png');
-        @endphp
-        <img src="{{ $profilePictureUrl }}" alt="{{ auth()->user()->name }}" class="profile-picture">
-        <h1>Bem-Vindo, {{ auth()->user()->name }}!</h1>
-        
+        @if (auth()->check())
+            <h1>Bem-Vindo, {{ auth()->user()->name }}!</h1>
+        @else
+            <h1>Bem-Vindo, visitante!</h1>
+        @endif
     </div>
 
     <!-- Formulário de busca -->
@@ -28,21 +27,13 @@
         @forelse ($recipes as $recipe)
             <div class="recipe">
                 <h3>{{ $recipe->title }}</h3>
-                <p>{{ $recipe->description }}</p>
-                <p>Created by: {{ $recipe->user->name }}</p> <!-- Mostra o nome do usuário que criou a receita -->
-                <a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-view-details">Detalhes</a>
-                @if ($recipe->user_id === auth()->id())
-                    <a href="{{ route('recipes.edit', $recipe->id) }}" class="btn btn-edit">Editar</a>
-                    <form action="{{ route('recipes.destroy', $recipe->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-delete">Excluir</button>
-                    </form>
-                @endif
+                <!-- Outros detalhes da receita -->
             </div>
         @empty
-            <p>Não encontramos essa receita....</p>
+            <p>Nenhuma receita encontrada.</p>
         @endforelse
     </div>
+
 </div>
+
 @endsection
